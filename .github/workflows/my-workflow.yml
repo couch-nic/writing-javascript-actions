@@ -1,6 +1,8 @@
 name: JS Actions
 
-on: [push]
+on:
+  pull_request:
+    types: [labeled]
 
 jobs:
   action:
@@ -14,4 +16,8 @@ jobs:
       uses: ./.github/actions/hello-world
       with:
         second-greeting: "A new second greeting"
+
+    - name: Ha-Ha
+      uses: ./.github/actions/joke-action
+
 
